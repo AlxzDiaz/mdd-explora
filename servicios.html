@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Catálogo de tours, hospedajes y transporte fluvial en Madre de Dios. Filtra por tipo, precio y calificación.">
+  <title>Servicios | MDD Explora</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="u-skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html" aria-label="MDD Explora, inicio">
+        <img class="header__logo-mark" src="img/logo.svg" alt="" width="36" height="36">
+        <span>MDD <span class="header__logo-accent">Explora</span></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+          <span class="nav__toggle-bar"></span>
+          <span class="u-visually-hidden">Abrir menú</span>
+        </button>
+        <ul class="nav__list" id="menu">
+          <li class="nav__item"><a class="nav__link" href="index.html">Inicio</a></li>
+          <li class="nav__item"><a class="nav__link" href="index.html#destinos">Destinos</a></li>
+          <li class="nav__item"><a class="nav__link nav__link--active" href="servicios.html" aria-current="page">Servicios</a></li>
+          <li class="nav__item"><a class="nav__link" href="index.html#operadores">Operadores</a></li>
+          <li class="nav__item"><a class="nav__link" href="index.html#mapa-seccion">Mapa</a></li>
+          <li class="nav__item"><a class="button button--primary button--small" href="reservar.html">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero hero--compact">
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__eyebrow">Catálogo de servicios</span>
+          <h1 class="hero__title">Tours, hospedajes y traslados verificados</h1>
+          <p class="hero__text">Precios y horarios claros de los operadores afiliados. Elige y reserva en línea.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filter">
+          <div class="form__group">
+            <label class="form__label" for="buscar">Buscar</label>
+            <input class="form__input" id="buscar" type="search" placeholder="Ej.: Sandoval, bote, lodge…">
+          </div>
+          <div class="form__group">
+            <label class="form__label" for="orden">Ordenar por</label>
+            <select class="form__select" id="orden">
+              <option value="relevancia">Relevancia</option>
+              <option value="precio-asc">Precio: menor a mayor</option>
+              <option value="precio-desc">Precio: mayor a menor</option>
+              <option value="rating">Mejor calificados</option>
+            </select>
+          </div>
+          <div class="filter__chips" role="group" aria-label="Tipo de servicio">
+            <button class="filter__chip" type="button" data-tipo="todos">Todos</button>
+            <button class="filter__chip" type="button" data-tipo="tour">Tours</button>
+            <button class="filter__chip" type="button" data-tipo="hospedaje">Hospedaje</button>
+            <button class="filter__chip" type="button" data-tipo="transporte">Transporte</button>
+          </div>
+          <p class="filter__count" id="contador" aria-live="polite"></p>
+        </div>
+
+        <div class="grid grid--3" id="catalogo">
+          <noscript><p>Activa JavaScript para ver el catálogo de servicios.</p></noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand">MDD Explora</p>
+          <p class="footer__text">Plataforma web para la promoción y gestión de servicios de turismo sostenible en Madre de Dios. Desarrollada por Amazonía Digital S.A.C.</p>
+        </div>
+        <div>
+          <h2 class="footer__title">Explora</h2>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="index.html#destinos">Destinos</a></li>
+            <li><a class="footer__link" href="servicios.html">Servicios</a></li>
+            <li><a class="footer__link" href="reservar.html">Reservar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__title">Operadores</h2>
+          <ul class="footer__list">
+            <li>Expediciones Garza Real</li>
+            <li>Lodge Castaña Azul</li>
+            <li>Botes Martín Pescador</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__title">Equipo</h2>
+          <ul class="footer__list">
+            <li>Alexzandro Edison Diaz Condori</li>
+            <li>Luis Emanuel Willian Soplin Jimenez</li>
+            <li>Elias Benjamin Lara Mercado</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__bottom">© <span data-anio>2026</span> Amazonía Digital S.A.C. · Proyecto académico UNAMAD · Empresas y reseñas simuladas.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

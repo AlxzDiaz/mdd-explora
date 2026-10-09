@@ -1,0 +1,36 @@
+/* Bloque cta: llamado a la acción para operadores */
+.cta {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-5);
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255, 197, 143, 0.35), transparent 40%),
+    linear-gradient(135deg, var(--color-river), var(--color-forest));
+  color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta__title {
+  font-size: var(--text-2xl);
+  color: var(--color-white);
+}
+
+.cta__text {
+  margin-top: var(--space-3);
+  color: var(--color-forest-light);
+}
+
+.cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (min-width: 1024px) {
+  .cta {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: var(--space-7);
+  }
+}

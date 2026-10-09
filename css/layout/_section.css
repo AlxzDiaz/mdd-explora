@@ -1,0 +1,20 @@
+/* Bloque section: estructura de las secciones de página */
+.section {
+  padding-block: var(--space-7);
+}
+
+/* Modificadores de piel */
+.section--alt {
+  background-color: var(--color-white);
+}
+
+.section--forest {
+  background-color: var(--color-forest);
+  color: var(--color-white);
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding-block: var(--space-8);
+  }
+}

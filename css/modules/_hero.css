@@ -1,0 +1,87 @@
+/* Bloque hero: portada principal */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-7);
+  background:
+    linear-gradient(180deg, rgba(20, 63, 45, 0.6), rgba(20, 63, 45, 0.92)),
+    url("../../img/selva.svg") center / cover no-repeat;
+  color: var(--color-white);
+}
+
+.hero__content {
+  max-width: 40rem;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-4);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background-color: rgba(255, 255, 255, 0.18);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.hero__title {
+  font-size: var(--text-3xl);
+  color: var(--color-white);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.hero__title-accent {
+  color: #ffc58f;
+}
+
+.hero__text {
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  opacity: 0.95;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.hero__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-7);
+}
+
+/* Variante compacta para páginas internas */
+.hero--compact {
+  padding-block: var(--space-6);
+  background:
+    linear-gradient(120deg, rgba(20, 63, 45, 0.94), rgba(27, 127, 140, 0.82)),
+    url("../../img/rio.svg") center / cover no-repeat;
+}
+
+.hero--compact .hero__title {
+  font-size: var(--text-2xl);
+}
+
+@media (min-width: 600px) {
+  .hero {
+    padding-block: var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-block: 7rem;
+  }
+
+  .hero--compact {
+    padding-block: var(--space-7);
+  }
+
+  .hero__stats {
+    max-width: 36rem;
+  }
+}

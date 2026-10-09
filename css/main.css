@@ -1,0 +1,43 @@
+/* ==========================================================================
+   MDD Explora — hoja principal
+   Arquitectura modular OOCSS + nomenclatura BEM
+   Orden: themes → base → layout → modules → utilities
+   Enfoque Mobile First: estilos base para móvil y media queries con
+   min-width en 600px (tablet), 1024px (laptop) y 1440px (ultra-wide).
+   ========================================================================== */
+
+/* 1. Themes: variables de color, tipografía y sombras ("piel") */
+@import url("themes/_amazonia.css");
+
+/* 2. Base: reset y estilos globales */
+@import url("base/_reset.css");
+@import url("base/_typography.css");
+
+/* 3. Layout: estructuras principales */
+@import url("layout/_container.css");
+@import url("layout/_grid.css");
+@import url("layout/_section.css");
+@import url("layout/_header.css");
+@import url("layout/_footer.css");
+
+/* 4. Modules: componentes reutilizables (bloques BEM) */
+@import url("modules/_button.css");
+@import url("modules/_nav.css");
+@import url("modules/_hero.css");
+@import url("modules/_section-head.css");
+@import url("modules/_card.css");
+@import url("modules/_badge.css");
+@import url("modules/_media.css");
+@import url("modules/_stat.css");
+@import url("modules/_planner.css");
+@import url("modules/_steps.css");
+@import url("modules/_review.css");
+@import url("modules/_map.css");
+@import url("modules/_filter.css");
+@import url("modules/_form.css");
+@import url("modules/_summary.css");
+@import url("modules/_alert.css");
+@import url("modules/_cta.css");
+
+/* 5. Utilities: clases rápidas de una sola responsabilidad */
+@import url("utilities/_utilities.css");

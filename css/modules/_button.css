@@ -1,0 +1,66 @@
+/* Objeto button (OOCSS): .button define la ESTRUCTURA,
+   los modificadores --primary / --secondary / --ghost definen la PIEL. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.75rem; /* objetivo táctil cómodo en móvil */
+  padding: var(--space-2) var(--space-5);
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+    transform var(--transition), box-shadow var(--transition);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  background-color: var(--color-macaw);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.button--primary:hover {
+  background-color: var(--color-macaw-dark);
+}
+
+.button--secondary {
+  background-color: var(--color-forest);
+  color: var(--color-white);
+}
+
+.button--secondary:hover {
+  background-color: var(--color-forest-dark);
+}
+
+.button--ghost {
+  border-color: currentColor;
+  background-color: transparent;
+  color: var(--color-forest);
+}
+
+.button--ghost:hover {
+  background-color: var(--color-forest-light);
+}
+
+.button--light {
+  background-color: var(--color-white);
+  color: var(--color-forest-dark);
+}
+
+.button--block {
+  width: 100%;
+}
+
+.button--small {
+  min-height: 2.25rem;
+  padding: var(--space-1) var(--space-4);
+  font-size: var(--text-sm);
+}

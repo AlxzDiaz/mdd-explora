@@ -1,0 +1,37 @@
+/* Bloque header: cabecera fija del sitio */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(247, 242, 232, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: 4rem;
+}
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-forest-dark);
+  text-decoration: none;
+}
+
+.header__logo-mark {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.header__logo-accent {
+  color: var(--color-macaw);
+}

@@ -1,0 +1,88 @@
+/* Bloque planner: "Arma tu viaje según tu presupuesto" */
+.planner {
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+}
+
+.planner__form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.planner__result {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background-color: var(--color-forest-light);
+}
+
+.planner__result-title {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+}
+
+.planner__list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.planner__item {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid rgba(31, 93, 67, 0.15);
+  font-size: var(--text-sm);
+}
+
+.planner__item-company {
+  display: block;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+}
+
+.planner__total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-forest-dark);
+}
+
+.planner__note {
+  margin-block: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.planner__empty {
+  color: var(--color-muted);
+}
+
+@media (min-width: 600px) {
+  .planner__form {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: end;
+  }
+
+  .planner__form .button {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .planner {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    padding: var(--space-6);
+  }
+
+  .planner__form {
+    grid-template-columns: 1fr 1fr;
+  }
+}

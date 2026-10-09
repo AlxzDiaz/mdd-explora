@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MDD Explora: tours, hospedajes y transporte fluvial de Madre de Dios en un solo lugar. Reserva en línea con operadores locales.">
+  <title>MDD Explora | Turismo sostenible en Madre de Dios</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="u-skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html" aria-label="MDD Explora, inicio">
+        <img class="header__logo-mark" src="img/logo.svg" alt="" width="36" height="36">
+        <span>MDD <span class="header__logo-accent">Explora</span></span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="menu">
+          <span class="nav__toggle-bar"></span>
+          <span class="u-visually-hidden">Abrir menú</span>
+        </button>
+        <ul class="nav__list" id="menu">
+          <li class="nav__item"><a class="nav__link nav__link--active" href="index.html" aria-current="page">Inicio</a></li>
+          <li class="nav__item"><a class="nav__link" href="#destinos">Destinos</a></li>
+          <li class="nav__item"><a class="nav__link" href="servicios.html">Servicios</a></li>
+          <li class="nav__item"><a class="nav__link" href="#operadores">Operadores</a></li>
+          <li class="nav__item"><a class="nav__link" href="#mapa-seccion">Mapa</a></li>
+          <li class="nav__item"><a class="button button--primary button--small" href="reservar.html">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <span class="hero__eyebrow">🌿 Turismo sostenible · Puerto Maldonado</span>
+          <h1 class="hero__title">Toda la Amazonía de <span class="hero__title-accent">Madre de Dios</span> en un solo lugar</h1>
+          <p class="hero__text">Compara tours, hospedajes y transporte fluvial de operadores locales, arma tu viaje según tu presupuesto y reserva en línea sin esperar respuesta por chat.</p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="#planificador">Arma tu viaje</a>
+            <a class="button button--light" href="servicios.html">Ver servicios</a>
+          </div>
+        </div>
+        <div class="hero__stats">
+          <p class="stat"><span class="stat__value">437 mil</span><span class="stat__label">visitantes a los atractivos en 2023</span></p>
+          <p class="stat"><span class="stat__value">+87,8%</span><span class="stat__label">turismo interno 1.er semestre 2024</span></p>
+          <p class="stat"><span class="stat__value">3</span><span class="stat__label">operadores piloto afiliados</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANIFICADOR -->
+    <section class="section" id="planificador">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-head__eyebrow">Paquete según presupuesto</span>
+          <h2 class="section-head__title">¿Cuánto quieres gastar? Nosotros armamos el viaje</h2>
+          <p class="section-head__text">Indica los días y tu presupuesto por persona. MDD Explora combina tour, hospedaje y traslado de las empresas afiliadas.</p>
+        </div>
+
+        <div class="planner">
+          <form class="planner__form" id="planner-form">
+            <div class="form__group">
+              <label class="form__label" for="dias">Días de viaje</label>
+              <select class="form__select" id="dias" name="dias">
+                <option value="1">1 día</option>
+                <option value="2" selected>2 días</option>
+                <option value="3">3 días</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="presupuesto">Presupuesto por persona (S/)</label>
+              <input class="form__input" id="presupuesto" name="presupuesto" type="number" min="40" step="10" value="300" inputmode="numeric">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="personas">Personas</label>
+              <input class="form__input" id="personas" name="personas" type="number" min="1" max="20" value="2" inputmode="numeric">
+            </div>
+            <button class="button button--secondary" type="submit">Armar mi viaje</button>
+          </form>
+
+          <div class="planner__result" id="planner-result" aria-live="polite">
+            <h3 class="planner__result-title">Tu propuesta aparecerá aquí</h3>
+            <p class="planner__empty">Ejemplo: 2 días con S/ 300 por persona → tour al Lago Sandoval, una noche en Lodge Castaña Azul y el traslado en bote.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINOS -->
+    <section class="section section--alt" id="destinos">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="section-head__eyebrow">Destinos</span>
+          <h2 class="section-head__title">Lugares que no puedes perderte</h2>
+          <p class="section-head__text">Fase piloto en la provincia de Tambopata. Muy pronto: Manu y Tahuamanu.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="card__media">
+              <img class="card__image" src="img/lago.svg" alt="Ilustración del Lago Sandoval" width="400" height="250" loading="lazy">
+              <div class="card__badges"><span class="badge badge--tour">Lago</span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Lago Sandoval</h3>
+              <p class="card__description">El destino más visitado de la región. Lobos de río, caimanes y aguajales a una hora de Puerto Maldonado.</p>
+              <div class="card__footer">
+                <span class="card__company">Desde S/ 120</span>
+                <a class="button button--ghost button--small" href="servicios.html?tipo=tour">Ver tours</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img class="card__image" src="img/selva.svg" alt="Ilustración de la selva de Tambopata con un guacamayo" width="400" height="250" loading="lazy">
+              <div class="card__badges"><span class="badge badge--tour">Reserva nacional</span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Reserva Nacional Tambopata</h3>
+              <p class="card__description">Collpas de guacamayos, caminatas nocturnas y lodges a orillas del río, gestionada por SERNANP.</p>
+              <div class="card__footer">
+                <span class="card__company">Desde S/ 70</span>
+                <a class="button button--ghost button--small" href="servicios.html">Ver experiencias</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__media">
+              <img class="card__image" src="img/rio.svg" alt="Ilustración de un bote navegando el río" width="400" height="250" loading="lazy">
+              <div class="card__badges"><span class="badge badge--transporte">Río</span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">Lago Valencia</h3>
+              <p class="card__description">Navegación por el río Madre de Dios hasta un lago de pescadores, cerca de la frontera con Bolivia.</p>
+              <div class="card__footer">
+                <span class="card__company">Desde S/ 180</span>
+                <a class="button button--ghost button--small" href="servicios.html?tipo=transporte">Ver paseos</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPERADORES (Media Object de OOCSS) -->
+    <section class="section" id="operadores">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-head__eyebrow">Empresas afiliadas · fase piloto</span>
+          <h2 class="section-head__title">Operadores locales que ya están en MDD Explora</h2>
+          <p class="section-head__text">Empezamos con tres MYPE turísticas de Puerto Maldonado. Más operadores se afiliarán en la siguiente fase.</p>
+        </div>
+
+        <div class="grid">
+          <article class="media">
+            <div class="media__figure"><img class="media__image" src="img/lago.svg" alt="" width="400" height="250" loading="lazy"></div>
+            <div class="media__body">
+              <span class="media__subtitle">Agencia de tours · Lago Sandoval</span>
+              <h3 class="media__title">Expediciones Garza Real</h3>
+              <p class="media__before">Antes: perdía clientes porque respondía tarde los mensajes de la noche.</p>
+              <p class="media__text">Ahora sus tours tienen precios, horarios y cupos visibles, y recibe reservas las 24 horas.</p>
+              <div class="media__actions"><a class="button button--ghost button--small" href="servicios.html?tipo=tour">Ver sus tours</a></div>
+            </div>
+          </article>
+
+          <article class="media">
+            <div class="media__figure"><img class="media__image" src="img/lodge.svg" alt="" width="400" height="250" loading="lazy"></div>
+            <div class="media__body">
+              <span class="media__subtitle">Hospedaje · río Tambopata</span>
+              <h3 class="media__title">Lodge Castaña Azul</h3>
+              <p class="media__before">Antes: anotaba reservas en un cuaderno y tuvo dos grupos para las mismas habitaciones.</p>
+              <p class="media__text">Ahora maneja su disponibilidad en un solo panel y evita las dobles reservas.</p>
+              <div class="media__actions"><a class="button button--ghost button--small" href="servicios.html?tipo=hospedaje">Ver hospedaje</a></div>
+            </div>
+          </article>
+
+          <article class="media">
+            <div class="media__figure"><img class="media__image" src="img/rio.svg" alt="" width="400" height="250" loading="lazy"></div>
+            <div class="media__body">
+              <span class="media__subtitle">Transporte fluvial y guiado</span>
+              <h3 class="media__title">Botes Martín Pescador</h3>
+              <p class="media__before">Antes: dependía de que un hotel lo recomendara porque nadie lo encontraba en internet.</p>
+              <p class="media__text">Ahora aparece en los paquetes junto a tours y hospedajes, con reserva directa.</p>
+              <div class="media__actions"><a class="button button--ghost button--small" href="servicios.html?tipo=transporte">Ver traslados</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="section section--alt" id="mapa-seccion">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-head__eyebrow">Mapa interactivo</span>
+          <h2 class="section-head__title">Rutas por ríos y lagos</h2>
+          <p class="section-head__text">Toca un lugar para ubicarlo en el mapa.</p>
+        </div>
+        <div class="map">
+          <div class="map__canvas" id="mapa" role="region" aria-label="Mapa de destinos de Madre de Dios"></div>
+          <div class="map__legend">
+            <button class="map__place" type="button" data-lat="-12.5933" data-lng="-69.1891">
+              <span class="map__dot"></span>
+              <span><span class="map__place-name">Puerto Maldonado</span><span class="map__place-text">Punto de partida y puerto fluvial</span></span>
+            </button>
+            <button class="map__place" type="button" data-lat="-12.6050" data-lng="-69.0400">
+              <span class="map__dot"></span>
+              <span><span class="map__place-name">Lago Sandoval</span><span class="map__place-text">Expediciones Garza Real</span></span>
+            </button>
+            <button class="map__place" type="button" data-lat="-12.7400" data-lng="-69.2600">
+              <span class="map__dot"></span>
+              <span><span class="map__place-name">Lodge Castaña Azul</span><span class="map__place-text">Río Tambopata (ubicación referencial)</span></span>
+            </button>
+            <button class="map__place" type="button" data-lat="-12.5600" data-lng="-68.8800">
+              <span class="map__dot"></span>
+              <span><span class="map__place-name">Lago Valencia</span><span class="map__place-text">Botes Martín Pescador</span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA (proceso TO-BE) -->
+    <section class="section section--forest" id="como-funciona">
+      <div class="container">
+        <div class="section-head section-head--light">
+          <span class="section-head__eyebrow">Cómo funciona</span>
+          <h2 class="section-head__title">De la búsqueda a la reserva confirmada</h2>
+          <p class="section-head__text">El proceso que antes se hacía por chat ahora es digital, rápido y deja registro.</p>
+        </div>
+        <ol class="steps">
+          <li class="steps__item">
+            <h3 class="steps__title">Busca</h3>
+            <p class="steps__text">Filtra por tipo de servicio, precio y calificación, o deja que el planificador arme tu viaje.</p>
+          </li>
+          <li class="steps__item">
+            <h3 class="steps__title">Compara</h3>
+            <p class="steps__text">Mira fotos, precios, duración y reseñas de otros turistas en un solo lugar.</p>
+          </li>
+          <li class="steps__item">
+            <h3 class="steps__title">Reserva</h3>
+            <p class="steps__text">Elige fecha y personas, y envía tu solicitud a todos los operadores a la vez.</p>
+          </li>
+          <li class="steps__item">
+            <h3 class="steps__title">Recibe confirmación</h3>
+            <p class="steps__text">El operador confirma en menos de 24 h y recibes un aviso con tu código de reserva.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- RESEÑAS -->
+    <section class="section section--alt" id="resenas">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="section-head__eyebrow">Reseñas</span>
+          <h2 class="section-head__title">Lo que dicen los viajeros</h2>
+          <p class="section-head__text">Reseñas de ejemplo para la demostración del sistema.</p>
+        </div>
+        <div class="grid grid--3">
+          <figure class="review">
+            <span class="review__stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote class="review__text">“Armé el viaje en cinco minutos: tour, lodge y bote con un solo pago estimado. Vimos lobos de río en Sandoval.”</blockquote>
+            <figcaption class="review__author"><span class="review__avatar">MR</span><span><span class="review__name">María R.</span><span class="review__origin">Lima</span></span></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="review__stars" aria-label="5 de 5 estrellas">★★★★★</span>
+            <blockquote class="review__text">“I couldn't find local guides on Google before. Here I booked the night walk and the river transfer easily.”</blockquote>
+            <figcaption class="review__author"><span class="review__avatar">JT</span><span><span class="review__name">James T.</span><span class="review__origin">Canadá</span></span></figcaption>
+          </figure>
+          <figure class="review">
+            <span class="review__stars" aria-label="4 de 5 estrellas">★★★★☆</span>
+            <blockquote class="review__text">“Me confirmaron la reserva del lodge el mismo día. Ya no tuve que esperar respuesta por WhatsApp.”</blockquote>
+            <figcaption class="review__author"><span class="review__avatar">CQ</span><span><span class="review__name">Carlos Q.</span><span class="review__origin">Cusco</span></span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA OPERADORES -->
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 class="cta__title">¿Tienes un negocio turístico en Madre de Dios?</h2>
+            <p class="cta__text">Agencias, guías, hospedajes, restaurantes y transporte fluvial: afíliate a MDD Explora, publica tus servicios y recibe reservas sin pagar comisiones altas.</p>
+          </div>
+          <div class="cta__actions">
+            <a class="button button--primary" href="mailto:contacto@amazoniadigital.pe?subject=Quiero%20afiliarme%20a%20MDD%20Explora">Quiero afiliarme</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__brand">MDD Explora</p>
+          <p class="footer__text">Plataforma web para la promoción y gestión de servicios de turismo sostenible en Madre de Dios. Desarrollada por Amazonía Digital S.A.C.</p>
+        </div>
+        <div>
+          <h2 class="footer__title">Explora</h2>
+          <ul class="footer__list">
+            <li><a class="footer__link" href="#destinos">Destinos</a></li>
+            <li><a class="footer__link" href="servicios.html">Servicios</a></li>
+            <li><a class="footer__link" href="reservar.html">Reservar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__title">Operadores</h2>
+          <ul class="footer__list">
+            <li>Expediciones Garza Real</li>
+            <li>Lodge Castaña Azul</li>
+            <li>Botes Martín Pescador</li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__title">Equipo</h2>
+          <ul class="footer__list">
+            <li>Alexzandro Edison Diaz Condori</li>
+            <li>Luis Emanuel Willian Soplin Jimenez</li>
+            <li>Elias Benjamin Lara Mercado</li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__bottom">© <span data-anio>2026</span> Amazonía Digital S.A.C. · Proyecto académico UNAMAD · Empresas y reseñas simuladas.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

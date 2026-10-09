@@ -1,0 +1,114 @@
+/* Bloque nav: menú principal.
+   Móvil: botón hamburguesa y lista desplegable.
+   ≥1024px: menú horizontal completo. */
+.nav__toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  cursor: pointer;
+}
+
+.nav__toggle-bar,
+.nav__toggle-bar::before,
+.nav__toggle-bar::after {
+  display: block;
+  width: 1.25rem;
+  height: 2px;
+  background-color: var(--color-forest-dark);
+  border-radius: 2px;
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+.nav__toggle-bar {
+  position: relative;
+}
+
+.nav__toggle-bar::before,
+.nav__toggle-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav__toggle-bar::before {
+  top: -6px;
+}
+
+.nav__toggle-bar::after {
+  top: 6px;
+}
+
+.nav__list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: var(--space-4);
+  background-color: var(--color-sand);
+  border-bottom: 1px solid var(--color-line);
+  box-shadow: var(--shadow-md);
+}
+
+.nav__link {
+  display: block;
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  background-color: var(--color-forest-light);
+}
+
+.nav__link--active {
+  color: var(--color-forest);
+  font-weight: 700;
+}
+
+/* Estado abierto (modificador del bloque) */
+.nav--open .nav__list {
+  display: flex;
+}
+
+.nav--open .nav__toggle-bar {
+  background-color: transparent;
+}
+
+.nav--open .nav__toggle-bar::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav--open .nav__toggle-bar::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (min-width: 1024px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__list {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .nav__link {
+    padding: var(--space-2) var(--space-3);
+  }
+}

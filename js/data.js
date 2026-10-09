@@ -1,0 +1,137 @@
+/* Catálogo de servicios de las 3 empresas piloto (datos simulados).
+   En la fase 2 estos datos vendrán del backend y la base de datos. */
+window.MDD = {
+  empresas: {
+    "garza-real": {
+      nombre: "Expediciones Garza Real",
+      rubro: "Agencia de tours",
+      whatsapp: "51900000001",
+    },
+    "castana-azul": {
+      nombre: "Lodge Castaña Azul",
+      rubro: "Hospedaje",
+      whatsapp: "51900000002",
+    },
+    "martin-pescador": {
+      nombre: "Botes Martín Pescador",
+      rubro: "Transporte fluvial y guiado",
+      whatsapp: "51900000003",
+    },
+  },
+
+  servicios: [
+    {
+      id: "tour-sandoval",
+      nombre: "Tour al Lago Sandoval",
+      empresa: "garza-real",
+      tipo: "tour",
+      precio: 120,
+      unidad: "por persona",
+      duracion: "Día completo",
+      descripcion:
+        "Caminata de 3 km por la Reserva Nacional Tambopata y paseo en canoa para ver lobos de río, guacamayos y el hoatzín.",
+      imagen: "img/lago.svg",
+      rating: 4.8,
+      destacado: true,
+    },
+    {
+      id: "caminata-nocturna",
+      nombre: "Caminata nocturna en la selva",
+      empresa: "garza-real",
+      tipo: "tour",
+      precio: 70,
+      unidad: "por persona",
+      duracion: "3 horas",
+      descripcion:
+        "Recorrido guiado con linterna para descubrir ranas, insectos y los sonidos de la selva de noche.",
+      imagen: "img/selva.svg",
+      rating: 4.6,
+      destacado: false,
+    },
+    {
+      id: "collpa-guacamayos",
+      nombre: "Collpa de guacamayos",
+      empresa: "garza-real",
+      tipo: "tour",
+      precio: 160,
+      unidad: "por persona",
+      duracion: "Madrugada + medio día",
+      descripcion:
+        "Salida al amanecer para observar cientos de guacamayos y loros alimentándose en la collpa de arcilla.",
+      imagen: "img/selva.svg",
+      rating: 4.9,
+      destacado: false,
+    },
+    {
+      id: "noche-bungalow",
+      nombre: "Noche en bungalow con desayuno",
+      empresa: "castana-azul",
+      tipo: "hospedaje",
+      precio: 140,
+      unidad: "por persona / noche",
+      duracion: "1 noche",
+      descripcion:
+        "Bungalow de madera frente al río Tambopata, con mosquitero, baño privado y desayuno amazónico.",
+      imagen: "img/lodge.svg",
+      rating: 4.7,
+      destacado: true,
+    },
+    {
+      id: "programa-3d2n",
+      nombre: "Programa 3D/2N todo incluido",
+      empresa: "castana-azul",
+      tipo: "hospedaje",
+      precio: 520,
+      unidad: "por persona",
+      duracion: "3 días / 2 noches",
+      descripcion:
+        "Hospedaje, alimentación completa, traslados desde el puerto y dos actividades guiadas dentro del lodge.",
+      imagen: "img/lodge.svg",
+      rating: 4.8,
+      destacado: false,
+      soloCatalogo: true,
+    },
+    {
+      id: "traslado-fluvial",
+      nombre: "Traslado fluvial Puerto Maldonado – lodge",
+      empresa: "martin-pescador",
+      tipo: "transporte",
+      precio: 40,
+      unidad: "por persona (ida y vuelta)",
+      duracion: "1 h 30 min por tramo",
+      descripcion:
+        "Bote con techo, chalecos salvavidas y motorista con experiencia en el río Madre de Dios.",
+      imagen: "img/rio.svg",
+      rating: 4.5,
+      destacado: false,
+    },
+    {
+      id: "lago-valencia",
+      nombre: "Paseo en bote al Lago Valencia",
+      empresa: "martin-pescador",
+      tipo: "transporte",
+      precio: 180,
+      unidad: "por persona",
+      duracion: "Día completo",
+      descripcion:
+        "Navegación por el río Madre de Dios hasta el Lago Valencia, cerca de la frontera con Bolivia. Incluye almuerzo.",
+      imagen: "img/rio.svg",
+      rating: 4.6,
+      destacado: false,
+    },
+    {
+      id: "pesca-artesanal",
+      nombre: "Pesca artesanal guiada",
+      empresa: "martin-pescador",
+      tipo: "tour",
+      precio: 90,
+      unidad: "por persona",
+      duracion: "Medio día",
+      descripcion:
+        "Aprende a pescar como los ribereños, con equipo incluido y guía local. Pesca y suelta responsable.",
+      imagen: "img/lago.svg",
+      rating: 4.4,
+      destacado: false,
+    },
+  ],
+};

@@ -1,0 +1,63 @@
+/* Bloque summary: resumen de la reserva */
+.summary {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background-color: var(--color-forest);
+  color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+}
+
+.summary__title {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-xl);
+  color: var(--color-white);
+}
+
+.summary__list {
+  display: grid;
+  gap: var(--space-2);
+  min-height: 2rem;
+}
+
+.summary__item {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.summary__empty {
+  font-size: var(--text-sm);
+  opacity: 0.8;
+}
+
+.summary__row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: var(--text-sm);
+}
+
+.summary__total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+}
+
+.summary__note {
+  margin-top: var(--space-4);
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+@media (min-width: 1024px) {
+  .summary {
+    position: sticky;
+    top: 5.5rem;
+  }
+}

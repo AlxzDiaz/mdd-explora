@@ -1,0 +1,29 @@
+/* Objeto alert: mensajes al usuario */
+.alert {
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-sm);
+  border-left: 4px solid currentColor;
+}
+
+.alert__title {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: inherit;
+}
+
+.alert__text {
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+}
+
+.alert--success {
+  background-color: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.alert--error {
+  background-color: #fbe9e7;
+  color: var(--color-error);
+}

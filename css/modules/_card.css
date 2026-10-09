@@ -1,0 +1,100 @@
+/* Bloque card: tarjeta reutilizable para destinos y servicios.
+   Se ve igual en cualquier contenedor (independiente del contexto). */
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background-color: var(--color-forest-light);
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__badges {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-5);
+}
+
+.card__company {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-river);
+}
+
+.card__title {
+  font-size: var(--text-xl);
+}
+
+.card__description {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+
+.card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-line);
+}
+
+.card__price {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-forest-dark);
+}
+
+.card__price-unit {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+/* Modificador: servicio destacado (plan "destacado" del modelo de negocio) */
+.card--featured {
+  outline: 3px solid var(--color-macaw);
+  outline-offset: -3px;
+}

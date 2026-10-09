@@ -1,0 +1,31 @@
+/* Objeto badge: etiqueta pequeña. Estructura en .badge, piel en modificadores. */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.2rem var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.badge--tour {
+  background-color: var(--color-forest-light);
+  color: var(--color-forest-dark);
+}
+
+.badge--hospedaje {
+  background-color: #fbe6d6;
+  color: var(--color-macaw-dark);
+}
+
+.badge--transporte {
+  background-color: var(--color-river-light);
+  color: #0f5560;
+}
+
+.badge--featured {
+  background-color: var(--color-macaw);
+  color: var(--color-white);
+}

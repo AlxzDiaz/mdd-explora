@@ -1,0 +1,20 @@
+/* Objeto contenedor: solo estructura */
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .container {
+    padding-inline: var(--space-5);
+  }
+}
+
+/* Ultra-wide: max-width para evitar líneas de texto infinitas */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 80rem;
+  }
+}

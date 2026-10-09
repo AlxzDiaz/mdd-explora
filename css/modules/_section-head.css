@@ -1,0 +1,41 @@
+/* Bloque section-head: encabezado reutilizable de sección */
+.section-head {
+  max-width: 44rem;
+  margin-bottom: var(--space-6);
+}
+
+.section-head__eyebrow {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-macaw);
+}
+
+.section-head__title {
+  font-size: var(--text-2xl);
+}
+
+.section-head__text {
+  margin-top: var(--space-3);
+  color: var(--color-muted);
+}
+
+.section-head--center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-head--light .section-head__eyebrow {
+  color: #ffc58f;
+}
+
+.section-head--light .section-head__title {
+  color: var(--color-white);
+}
+
+.section-head--light .section-head__text {
+  color: var(--color-forest-light);
+}

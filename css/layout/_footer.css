@@ -1,0 +1,64 @@
+/* Bloque footer */
+.footer {
+  padding-block: var(--space-7) var(--space-5);
+  background-color: var(--color-forest-dark);
+  color: var(--color-forest-light);
+  font-size: var(--text-sm);
+}
+
+.footer__grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.footer__title {
+  margin-bottom: var(--space-3);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-white);
+}
+
+.footer__brand {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  color: var(--color-white);
+}
+
+.footer__text {
+  margin-top: var(--space-2);
+  max-width: 28rem;
+}
+
+.footer__list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.footer__link {
+  color: var(--color-forest-light);
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.footer__bottom {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  opacity: 0.8;
+}
+
+@media (min-width: 600px) {
+  .footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr 1.3fr;
+  }
+}

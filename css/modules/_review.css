@@ -1,0 +1,48 @@
+/* Bloque review: reseña de un turista */
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background-color: var(--color-sand);
+  border: 1px solid var(--color-line);
+}
+
+.review__stars {
+  color: var(--color-star);
+  letter-spacing: 0.15em;
+}
+
+.review__text {
+  flex: 1;
+  font-style: italic;
+}
+
+.review__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.review__avatar {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--color-river);
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+.review__name {
+  font-weight: 600;
+}
+
+.review__origin {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}

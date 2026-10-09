@@ -1,0 +1,28 @@
+/* Objeto grid (OOCSS): rejilla fluida reutilizable.
+   Mobile First: 1 columna y se añaden columnas al crecer la pantalla. */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+@media (min-width: 600px) {
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .grid--sidebar {
+    grid-template-columns: 1fr 22rem;
+    align-items: start;
+  }
+}
